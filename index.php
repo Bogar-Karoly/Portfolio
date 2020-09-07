@@ -9,26 +9,21 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script> 
-        /*
-            $(window).scroll(function(){
-                var nav = $('#nav').offset();
+        <script>
+            $(function () {
+                $('form').on('submit', function (e) {
+                    e.preventDefault();
 
-                console.log($(window).height() - $('.img').offset().top - $('.img').height());
-                console.log($('.img').height());
-                console.log('top: '+nav.top);
-                console.log('scroll: '+$(window).scrollTop());
-
-                if ($(window).scrollTop() > nav.top) {
-                    $('#nav').css('position', 'fixed').css('top','0');
-                }
-                else {
-                    if($('.img').height() > $(window).scrollTop()) {
-                        $('#nav').css('position', 'static').css('top','');
-                    }
-                }
+                    $.ajax({
+                        type: 'post',
+                        url: 'sendmail.php',
+                        data: $('form').serialize(),
+                        success: function () {
+                            alert('form was submitted');
+                        }
+                    });
+                });
             });
-        */
         </script>
     </head>
     <body>
