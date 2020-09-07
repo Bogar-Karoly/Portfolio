@@ -70,7 +70,7 @@ body, html {
 }
 
 /* Project */
-.projects, .about, .contact {
+.projects, .about, .contactForm {
     width: auto;
     max-width: 800px;
     margin: auto;
@@ -80,38 +80,6 @@ body, html {
     border-radius: 10px;
     margin-top: 10px;
     background-color: rgb(26, 20, 82);
-}
-.contact {
-
-}
-.formGroup {
-    
-}
-.formGroup input{
-    margin-bottom: 10px;
-    border-radius: 10px;
-    height: 35px;
-    max-width: 800px;
-    width: 100%;
-    background-color: gray;
-    color: black;
-}
-.formGroup textarea {
-    max-width: 800px;
-    background-color: gray;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    width: 100%;
-    color: black;
-}
-::placeholder {
-    color: rgb(107, 106, 106);
-    font-size: 15px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-ul {
-    list-style-type: none;
 }
 /* Title */
 .title {
@@ -129,6 +97,7 @@ ul {
     margin: 0;
     padding: 0; 
     text-align: left;
+    list-style-type: none;
 }
 .title ul li {
     height: 40px;
@@ -177,3 +146,66 @@ h1 {
     font-size: 20px;
     font-weight: 500;
 }
+/* CONTACT */
+.formSubmit {
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    cursor: pointer;
+    border: 2px solid var(--offWhite);
+    color: var(--offWhite);
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(26, 20, 82);
+    font-size: 20px;    
+}
+.contact {
+    text-align: center;
+    margin-top: 5em;
+    font-family: bold;
+    font-size: 20px;
+}
+.formGroup input{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 35px;
+    max-width: 800px;
+    width: 100%;
+    background-color: gray;
+    color: black;
+}
+.formGroup textarea {
+    max-width: 800px;
+    background-color: gray;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+    color: black;
+}
+::placeholder {
+    color: rgb(107, 106, 106);
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* LINKS */
+.links a{
+    display: inline-block;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: coral;
+    border-radius: 10px;
+}
+.links {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+/* OTHER */

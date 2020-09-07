@@ -56,11 +56,11 @@
         </section>
 
     <!-- Projects -->
-    <section id="projects">
+        <section id="projects">
         
-    <h1>PROJECTS</h1>
+            <h1>PROJECTS</h1>
 
-    <div class="projects">
+            <div class="projects">
     <!-- PHP -->
     <?php 
         require('import.php');
@@ -83,11 +83,17 @@
                         echo '</ul>';
                     echo '</div>';
                     echo '<div class="detail">';
-                        echo 'Languages:';
+                        echo '<p>Descripsion: '.$value->getText().'</p>';
+                        echo 'Skills:';
                         echo '<ul>';
-                            echo '<li>PHP</li>';
-                            echo '<li>HTML</li>';
+                            foreach($value->getEnvironment() as $skill) {
+                                echo '<li>'.$skill.'</li>';
+                            }
                         echo '</ul>';
+                        echo '<div class="links">';
+                            echo '<a href="'.$value->getGithub().'">Git</a>';
+                            echo '<a href="'.$value->getLiveVersion().'">Live</a>';
+                        echo '</div>';
                     echo '</div>';
                 echo '</div>';
             }
@@ -97,29 +103,32 @@
         }
     
         ?>
-    </div>
+            </div>
         </section>
         <!-- CONTACT -->
         <section id="contact">
             <h1>CONTACT</h1>
-            <form class="contact">
+            <form class="contactForm">
                 <div class="formGroup">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email">
+                    <input type="email" id="email" placeholder="Email" required>
                     
                 </div>
                 <div class="formGroup">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" placeholder="Subject">
+                    <input type="text" id="subject" placeholder="Subject" required>
                 </div>
                 <div class="formGroup">
                     <label for="message">Message</label>
                     <textarea id="Message" rows="10" placeholder="Your message..." required></textarea>
                 </div>
                 <div class="formSubmit">
-                    <input type="submit" id="Message" class="btn">
+                    <input type="submit" id="Message" class="btn" value="SUBMIT ">
                 </div>
             </form>
+            <div class="contact">
+                <a href="mailto:karesz0328@gmail.com" class="emailLink">karesz0328@gmail.com</a>
+            </div>
         </section>
         <script src="animations.js"></script>
     </body>

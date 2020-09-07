@@ -32,11 +32,17 @@ class Details {
     private $name;
     //private $image;
     private $text;
+    private $environment;
+    private $github;
+    private $liveVersion;
 
     public function __construct($row) {
         $array = explode(';',$row);
         $this->name = $array[0];
         $this->text = $array[1];
+        $this->environment = explode('+',$array[2]);
+        $this->github = $array[3];
+        $this->liveVersion = $array[4];
     }
 
     public function getName() {
@@ -44,6 +50,15 @@ class Details {
     }
     public function getText() {
         return $this->text;
+    }
+    public function getEnvironment() {
+        return $this->environment;
+    }
+    public function getGithub() {
+        return $this->github;
+    }
+    public function getLiveVersion() {
+        return $this->liveVersion;
     }
 }
 
