@@ -1,0 +1,8 @@
+CURRENCY CONVERTER;as
+da;ad
+ad;sas
+da;ad
+ad;sas
+da;ad
+ad;sas
+da;ad
