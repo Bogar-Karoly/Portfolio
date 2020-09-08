@@ -1,3 +1,4 @@
+/* A bit messy*/
 body, html {
     margin: 0;
     padding: 0;
@@ -117,9 +118,6 @@ body, html {
     border-left: solid blue;
 }
 /* Details */
-p {
-    font-size: 10px;
-}
 .detail {
     padding: 0 18px;
     max-height: 0;
@@ -132,24 +130,16 @@ p {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-h1 {
-
-    
-    font-size: 3em;
-  margin-top: 50px;
-  font-weight: normal;
-  text-align: center;
-}
-
-.p {
-    
-    font-size: 20px;
-    font-weight: 500;
-}
 /* CONTACT */
 .formSubmit {
     display: flex;
     justify-content: center;
+    
+}
+.formSubmit input {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 160px;
 }
 .btn{
     cursor: pointer;
@@ -193,21 +183,62 @@ h1 {
 /* LINKS */
 .links a{
     display: inline-block;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    padding: 14px 16px;
+
+    padding: 10px;
     margin: 10px;
-    text-decoration: none;
-    font-size: 17px;
-    background-color: coral;
-    border-radius: 10px;
     max-width: 100px;
     width: 100%;
+
+    text-decoration: none;
+    font-size: 17px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    border-radius: 20px;
+    border-color:   #0C0030;
+    border-width: 4px;
+    border-style: solid;
+}
+.links a:hover {
+    background: #0C0030;
 }
 .links {
     margin: 0;
     padding: 0;
     text-align: center;
 }
+/* SKILLS */
+.skills p {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+
+    border-radius: 30px;
+    background-color: darkcyan;
+    color: black;
+    font-size: 16px;
+}
 /* OTHER */
+hr {
+    color: rgb(26, 20, 82);
+}
+.desc {
+    font-size: 20px;
+}
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h1 {
+    font-size: 3em;
+    margin-top: 50px;
+    font-weight: normal;
+    text-align: center;
+}
+p {
+    font-size: 10px;
+}
+.p {
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 500;
+}

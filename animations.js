@@ -61,11 +61,14 @@
     virtualElement.style.height = parseInt(rect.height) + 'px';
     
     var fix = function() {
-              
+        
+        //get scroll Y value
         var scroll = window.scrollY;
-              
+        
+        //check if fixed
         var isFixed = document.body.classList.contains('fixed');
-              
+        
+        //check if offset <= Y and not fixed
         if(scroll >= offset && !isFixed) {
               
             document.body.classList.add('fixed');

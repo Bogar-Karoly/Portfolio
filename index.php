@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HOME</title>
+        <title>Portfolio</title>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/44af24657a.js" crossorigin="anonymous"></script>
+        <!-- JQUERY -->
         <script>
             $(function () {
                 $('form').on('submit', function (e) {
@@ -56,7 +57,7 @@
             <h1>PROJECTS</h1>
 
             <div class="projects">
-    <!-- PHP -->
+    
     <?php 
         require('import.php');
 
@@ -70,7 +71,6 @@
                         echo '<ul>';
                             echo '<li>';
                                 echo '<h2>'.$value->getName().'</h2>';
-                                //echo '<p>'.$value->getText().'</p>';
                             echo '</li>';
                             echo '<li>';
                                 echo '<i id="arrow" class="fa fa-angle-down" style="font-size:36px"></i>';
@@ -78,16 +78,18 @@
                         echo '</ul>';
                     echo '</div>';
                     echo '<div class="detail">';
-                        echo '<p>Descripsion: '.$value->getText().'</p>';
-                        echo 'Skills:';
-                        echo '<ul>';
+                        echo '<h4>Descripsion:</h4><p class="desc"> '.$value->getText().'</p>';
+                        echo '<hr>';
+                        echo '<h4>Skills:</h4>';
+                        echo '<div class="skills">';
                             foreach($value->getEnvironment() as $skill) {
-                                echo '<li>'.$skill.'</li>';
+                                echo '<p class="skill">'.$skill.'</p>';
                             }
-                        echo '</ul>';
+                        echo '</div>';
+                        echo '<hr>';
                         echo '<div class="links">';
-                            echo '<a href="'.$value->getGithub().'">Git</a>';
-                            echo '<a href="'.$value->getLiveVersion().'">Live</a>';
+                            echo '<a href="'.$value->getGithub().'"><i class="fab fa-github"></i>Github</a>';
+                            echo '<a href="'.$value->getLiveVersion().'">Live Demo</a>';
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
