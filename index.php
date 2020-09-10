@@ -40,6 +40,7 @@
                 <il><a href="#about">ABOUT ME</a></il>
                 <il><a href="#projects">PROJECTS</a></il>
                 <il><a href="#contact">CONTACT</a></il>
+                <il><a href="resume.pdf" target="_blank">RESUME</a></il>
             </ul>
         </div>
         <section id="about">

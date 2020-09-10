@@ -43,14 +43,10 @@ body, html {
     text-align: center;
     list-style: none;
 }
-.header li a {
+.header a {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    float: none;
-    opacity: none; 
-
     display: inline-block;
     color: #f2f2f2;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -63,7 +59,7 @@ body, html {
 }
 
 /* Project */
-.projects, .about, .contactForm {
+.projects, .about, .contactForm, .moreLink {
     width: auto;
     max-width: 800px;
     margin: auto;
@@ -113,10 +109,6 @@ body, html {
 .title li:last-child {
     float: right;
 }
-.title ul li i {
-    padding-left: 15px;
-    border-left: solid blue;
-}
 /* Details */
 .detail {
     padding: 0 18px;
@@ -143,7 +135,7 @@ body, html {
 }
 .btn{
     cursor: pointer;
-    border: 2px solid var(--offWhite);
+    border: none;
     color: var(--offWhite);
     padding: 0.5em;
 
@@ -159,15 +151,9 @@ body, html {
     font-size: 20px;
 }
 .formGroup input{
-    margin-bottom: 10px;
-    border-radius: 10px;
     height: 35px;
-    max-width: 800px;
-    width: 100%;
-    background-color: gray;
-    color: black;
 }
-.formGroup textarea {
+.formGroup textarea, .formGroup input {
     max-width: 800px;
     background-color: gray;
     margin-bottom: 10px;
@@ -180,7 +166,13 @@ body, html {
     font-size: 15px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 /* LINKS */
+.links {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 .links a{
     display: inline-block;
 
@@ -191,7 +183,6 @@ body, html {
 
     text-decoration: none;
     font-size: 17px;
-    text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     border-radius: 20px;
@@ -204,11 +195,7 @@ body, html {
 .links a:hover {
     background: #0C0030;
 }
-.links {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+
 /* SKILLS */
 .skills p {
     display: inline-block;
