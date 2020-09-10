@@ -20,7 +20,7 @@
                         url: 'sendmail.php',
                         data: $('form').serialize(),
                         success: function () {
-                            alert('form was submitted');
+                            alert('Message sent!');
                         }
                     });
                 });
