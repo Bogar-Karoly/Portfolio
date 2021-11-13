@@ -71,19 +71,12 @@
         
         //check if offset <= Y and not fixed
         if(scroll >= offset && !isFixed) {
-              
             document.body.classList.add('fixed');
-
-            navBar.style.width = parseInt(rect.width) + 'px';
-              
             navBar.parentNode.insertBefore(virtualElement, navBar);
         }
         else if(scroll <= offset && isFixed) {
-
             document.body.classList.remove('fixed');
-            navBar.style.width = 'auto';
-              
-            var formerFirstChild = document.body.removeChild(virtualElement);
+            document.body.removeChild(virtualElement);
         }
               
     }
