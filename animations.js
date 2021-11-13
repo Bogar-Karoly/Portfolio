@@ -67,6 +67,7 @@
         
         //check if fixed
         var isFixed = document.body.classList.contains('fixed');
+        rect = navBar.getBoundingClientRect();
         
         //check if offset <= Y and not fixed
         if(scroll >= offset && !isFixed) {
