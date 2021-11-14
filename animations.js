@@ -46,9 +46,8 @@
 
 //navigation
 (function(){
-
     //get navbar element
-    var navBar = document.querySelector('#nav');
+    const navBar = document.querySelector('#nav');
 
     //get the offset of the navbar element
     var offset = navBar.offsetTop;
@@ -57,11 +56,10 @@
     var rect = navBar.getBoundingClientRect();
     
     //create a virtual div element and set rect as its maxheight in pixel
-    var virtualElement = document.createElement('div');
+    const virtualElement = document.createElement('div');
     virtualElement.style.height = parseInt(rect.height) + 'px';
     
-    var fix = function() {
-        
+    const fix = function() {
         //get scroll Y value
         var scroll = window.scrollY;
         
@@ -82,3 +80,28 @@
     }
     window.addEventListener('scroll', fix);
 })();
+
+const btn = document.getElementById("submit-btn");
+btn.addEventListener('click', async function(e) {
+    const email = document.getElementById("email").value;
+    const msg = document.getElementById("message").value;
+    const subject = document.getElementById("subject").value;
+
+    const response = await sendRequest({email: email, msg: msg, subject: subject});
+    alert(response.data);
+});
+function sendRequest(params) {
+    return new Promise((res,rej) => {
+        jQuery.ajax({
+            type: "POST",
+            url: "sendmail.php",
+            data: params,
+            success: function(result) {
+                res(JSON.parse(result))
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        })
+    });
+}
