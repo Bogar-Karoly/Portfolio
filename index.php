@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Portfolio</title>
-        <meta charset="utf8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
 
         <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="jquery-3.6.0.min.js?v=<?php echo time(); ?>"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
         <script src="https://kit.fontawesome.com/44af24657a.js" crossorigin="anonymous"></script>
-        <!-- JQUERY -->
+        <!-- SCRIPT -->
         <script>
+            
+            /*
             $(function () {
                 $('form').on('submit', function (e) {
                     e.preventDefault();
+                    const email = document.getElementById("email");
+                    const msg = document.getElementById("message");
+                    const subject = document.getElementById("subject");
 
                     $.ajax({
                         type: 'post',
                         url: 'sendmail.php',
-                        data: $('form').serialize(),
-                        success: function () {
-                            alert('Message sent!');
+                        data: {email: email, msg: msg, subject: subject},
+                        success: function (result) {
+                            alert(result.data);
+                        },
+                        error: function (result) {
+                            alert('A problem occurred while tried to send the message!');
                         }
                     });
                 });
-            });
+            });*/
         </script>
     </head>
     <body>
@@ -51,66 +60,56 @@
                 </p>
             </div>
         </section>
-
-    <!-- Projects -->
+        <!-- Projects -->
         <section id="projects">
-        
             <h1>PROJECTS</h1>
-
             <div class="projects">
-    
-    <?php 
-        require('import.php');
-
-        $temp = new Import();
-
-        if($temp->rimport()) {
-            $dat = $temp->getData();
-            foreach($dat as $value) {
-                echo '<div class="project-container pos">';
-                    echo '<div class="title">';
-                        echo '<ul>';
-                            echo '<li>';
-                                echo '<h2>'.$value->getName().'</h2>';
-                            echo '</li>';
-                            echo '<li>';
-                                echo '<i id="arrow" class="fa fa-angle-down" style="font-size:36px"></i>';
-                            echo '</li>';
-                        echo '</ul>';
-                    echo '</div>';
-                    echo '<div class="detail">';
-                        echo '<h4>Descripsion:</h4><p class="desc"> '.$value->getText().'</p>';
-                        echo '<hr>';
-                        echo '<h4>Skills:</h4>';
-                        echo '<div class="skills">';
-                            foreach($value->getEnvironment() as $skill) {
-                                echo '<p class="skill">'.$skill.'</p>';
-                            }
-                        echo '</div>';
-                        echo '<hr>';
-                        echo '<div class="links">';
-                            echo '<a href="'.$value->getGithub().'"><i class="fab fa-github"></i>Github</a>';
-                            echo '<a href="'.$value->getLiveVersion().'">Live Demo</a>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</div>';
-            }
-        }
-        else {
-            echo '<div class="noProjects">There\'s no project avaible</div>';
-        }
-    
-        ?>
+            <?php 
+                require('import.php');
+                $temp = new Import();
+                if($temp->rimport()) {
+                    $dat = $temp->getData();
+                    foreach($dat as $value) { ?>
+                        <div class="project-container pos">
+                            <div class="title">
+                                <ul>
+                                    <li>
+                                        <h2><?php echo $value->getName(); ?></h2>
+                                    </li>
+                                    <li>
+                                        <i id="arrow" class="fa fa-angle-down" style="font-size:36px"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="detail">
+                                <h4>Descripsion:</h4><p class="desc"><?php echo $value->getText(); ?></p>
+                                <hr>
+                                <h4>Skills:</h4>
+                                <div class="skills">
+                                    <?php foreach($value->getEnvironment() as $skill) { ?>
+                                        <p class="skill"><?php echo $skill; ?></p>
+                                    <?php } ?>
+                                </div>
+                                <hr>
+                                <div class="links">
+                                    <a href="<?php echo $value->getGithub(); ?>"><i class="fab fa-github"></i>Github</a>
+                                    <a href="<?php echo $value->getLiveVersion(); ?>">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                <?php } else { ?>
+                    <div class="noProjects">There\'s no project avaible</div>
+                <?php } ?>
             </div>
         </section>
         <!-- CONTACT -->
         <section id="contact">
             <h1>CONTACT</h1>
-            <form class="contactForm">
+            <!--<form class="contactForm">-->
                 <div class="formGroup">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Email" required>
-                    
                 </div>
                 <div class="formGroup">
                     <label for="subject">Subject</label>
@@ -118,12 +117,12 @@
                 </div>
                 <div class="formGroup">
                     <label for="message">Message</label>
-                    <textarea id="Message" rows="10" placeholder="Your message..." required></textarea>
+                    <textarea id="message" rows="10" placeholder="Your message..." required></textarea>
                 </div>
                 <div class="formSubmit">
-                    <input type="submit" id="Message" class="btn" value="SUBMIT ">
+                    <button id="submit-btn" class="btn" >SEND</button>
                 </div>
-            </form>
+            <!--</form>-->
             <div class="contact">
                 <a href="mailto:karesz0328@gmail.com" class="emailLink">karesz0328@gmail.com</a>
             </div>
