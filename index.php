@@ -106,7 +106,7 @@
         <!-- CONTACT -->
         <section id="contact">
             <h1>CONTACT</h1>
-            <!--<form class="contactForm">-->
+            <div class="contactForm">
                 <div class="formGroup">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="Email" required>
@@ -122,7 +122,7 @@
                 <div class="formSubmit">
                     <button id="submit-btn" class="btn" >SEND</button>
                 </div>
-            <!--</form>-->
+            </div>
             <div class="contact">
                 <a href="mailto:karesz0328@gmail.com" class="emailLink">karesz0328@gmail.com</a>
             </div>
