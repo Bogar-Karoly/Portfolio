@@ -5,36 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Portfolio</title>
 
-        <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+        <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="jquery-3.6.0.min.js?v=<?php echo time(); ?>"></script>
+        <script src="js/jquery-3.6.0.min.js?v=<?php echo time(); ?>"></script>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
         <script src="https://kit.fontawesome.com/44af24657a.js" crossorigin="anonymous"></script>
-        <!-- SCRIPT -->
-        <script>
-            
-            /*
-            $(function () {
-                $('form').on('submit', function (e) {
-                    e.preventDefault();
-                    const email = document.getElementById("email");
-                    const msg = document.getElementById("message");
-                    const subject = document.getElementById("subject");
-
-                    $.ajax({
-                        type: 'post',
-                        url: 'sendmail.php',
-                        data: {email: email, msg: msg, subject: subject},
-                        success: function (result) {
-                            alert(result.data);
-                        },
-                        error: function (result) {
-                            alert('A problem occurred while tried to send the message!');
-                        }
-                    });
-                });
-            });*/
-        </script>
     </head>
     <body>
         <div class="head">
@@ -60,16 +35,44 @@
                 </p>
             </div>
         </section>
-        <!-- Projects -->
+        <section id="experiences">
+            <h1>EXPERIENCES</h1>
+            <div class="experiences">
+            <?php
+                require_once 'php/import.php';
+                $import = new Import();
+                $data = $import->getExperiences();
+                if($data !== false) {
+                    foreach($data as $value) { ?>
+                        <div class="project-container pos">
+                            <div class="title">
+                                <ul>
+                                    <li>
+                                        <h2><?php echo $value->getCompanyName()." - ".$value->getPosition();  ?></h2>
+                                    </li>
+                                    <li>
+                                        <i id="arrow" class="fa fa-angle-down" style="font-size:36px"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="detail">
+                                <h4>Descripsion:</h4><p class="desc"><?php echo $value->getDescription(); ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+                <?php } else { ?>
+                    <div class="noProjects">There's no work experience available</div>
+                <?php } ?>
+            </div>
+        </section>
+        <!-- PROJECTS -->
         <section id="projects">
             <h1>PROJECTS</h1>
             <div class="projects">
             <?php 
-                require('import.php');
-                $temp = new Import();
-                if($temp->rimport()) {
-                    $dat = $temp->getData();
-                    foreach($dat as $value) { ?>
+                $data = $import->getProjects();
+                if($data !== false) {
+                    foreach($data as $value) { ?>
                         <div class="project-container pos">
                             <div class="title">
                                 <ul>
@@ -99,7 +102,7 @@
                         </div>
                     <?php } ?>
                 <?php } else { ?>
-                    <div class="noProjects">There\'s no project avaible</div>
+                    <div class="noProjects">There's no project available</div>
                 <?php } ?>
             </div>
         </section>
@@ -127,6 +130,6 @@
                 <a href="mailto:karesz0328@gmail.com" class="emailLink">karesz0328@gmail.com</a>
             </div>
         </section>
-        <script src="animations.js"></script>
+        <script src="js/animations.js"></script>
     </body>
 </html>

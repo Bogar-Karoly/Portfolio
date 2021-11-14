@@ -1,1 +1,0 @@
-CURRENCY CONVERTER;A simple currency convertel which is using an api call to get the exchange rate.;PHP+Javascript+CSS+HTML;https://github.com/Bogar-Karoly/Portfolio;none
