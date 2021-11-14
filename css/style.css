@@ -1,0 +1,234 @@
+/* A bit messy*/
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #0C0020;
+    overflow-x: hidden;
+    font-family: 'Oxygen Mono', monospace, Arial, Helvetica, sans-serif;
+    color: rgb(158, 152, 152);
+
+    scroll-behavior: smooth;
+    padding-bottom: 30px;
+}
+.head {
+    height: 30vh;
+    background-image: url('../images/background2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.fixed .header{
+    position: fixed;
+    top: 0;
+}
+
+/* Nav */
+.header {
+    /*opacity: 0.7;*/ 
+    overflow: hidden;
+    background-color: #0C0010;
+    width: 100%;
+    
+}
+.header ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.header a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: inline-block;
+    color:rgb(189, 188, 188);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    transition: all .3s ease-out;
+}
+.header a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* Project */
+.projects, .about, .contactForm, .moreLink, .experiences {
+    width: auto;
+    max-width: 800px;
+    margin: auto;
+    padding: 0;
+}
+.project-container {
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(26, 20, 82);
+}
+.noProjects {
+    background-color: #0C0030;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+    border-radius: 10px;
+    width: 800px;
+    margin: auto;
+}
+/* Title */
+.title {
+    cursor: pointer;
+
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #0C0030;
+}   
+.title ul {
+    margin: 0;
+    padding: 0; 
+    text-align: left;
+    list-style-type: none;
+}
+.title ul li {
+    height: 40px;
+    
+    
+    display: inline-block;
+}
+.title ul li h2 {
+    margin: auto;
+    padding: 8px;
+}
+.title li:last-child {
+    float: right;
+}
+/* Details */
+.detail {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /*transition: width 600ms ease-out, height 600ms ease-out;*/
+}
+
+.active, collapsible:hover {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+/* CONTACT */
+.formSubmit {
+    display: flex;
+    justify-content: center;
+    
+}
+.formSubmit input, .btn {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 160px;
+}
+.btn{
+    cursor: pointer;
+    border: none;
+    color: var(--offWhite);
+    padding: 0.5em;
+
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(26, 20, 82);
+    font-size: 20px;    
+}
+.contact {
+    text-align: center;
+    margin-top: 5em;
+    font-family: bold;
+    font-size: 20px;
+}
+.formGroup input{
+    height: 35px;
+}
+.formGroup textarea, .formGroup input {
+    max-width: 800px;
+    background-color: gray;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+    color: black;
+}
+::placeholder {
+    color: rgb(107, 106, 106);
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* LINKS */
+.links {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.links a{
+    display: inline-block;
+
+    padding: 10px;
+    margin: 10px;
+    max-width: 100px;
+    width: 100%;
+
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    border-radius: 20px;
+    border-color:   #0C0030;
+    border-width: 4px;
+    border-style: solid;
+
+    transition: all .3s ease-out;
+}
+.links a:hover {
+    background: #0C0030;
+}
+
+/* SKILLS */
+.skills p {
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+
+    border-radius: 30px;
+    background-color: darkcyan;
+    color: black;
+    font-size: 16px;
+}
+/* OTHER */
+hr {
+    color: rgb(26, 20, 82);
+}
+.desc {
+    font-size: 20px;
+}
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h1 {
+    font-size: 3em;
+    margin-top: 50px;
+    font-weight: normal;
+    text-align: center;
+}
+p {
+    font-size: 10px;
+}
+.p {
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 500;
+}
