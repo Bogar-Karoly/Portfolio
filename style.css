@@ -128,7 +128,7 @@ body, html {
     justify-content: center;
     
 }
-.formSubmit input {
+.formSubmit input, .btn {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 160px;
