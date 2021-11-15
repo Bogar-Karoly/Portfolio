@@ -51,11 +51,11 @@ class Project {
     
     public function __construct($row) {
         $row = explode(';',$row);
-        $this->name = $row[0];
-        $this->text = $row[1];
-        $this->environment = explode('+',$row[2]);
-        $this->github = $row[3];
-        $this->live_version = $row[4];
+        $this->name =           $row[0];
+        $this->text =           $row[1];
+        $this->environment =    explode('+',$row[2]);
+        $this->github =         $row[3];
+        $this->live_version =   $row[4];
     }
 }
 
@@ -72,10 +72,10 @@ class Experience {
 
     public function __construct($row) {
         $row = explode(';',$row);
-        $this->company_name = $row[0];
-        $this->time_frame = $row[1];
-        $this->position = $row[2];
-        $this->description = $row[3];
+        $this->company_name =   $row[0];
+        $this->time_frame =     $row[1];
+        $this->position =       $row[2];
+        $this->description =    $row[3];
     }
 }
 
