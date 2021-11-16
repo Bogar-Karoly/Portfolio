@@ -56,6 +56,7 @@
                                 </ul>
                             </div>
                             <div class="detail">
+                                <div class="position"><?php echo $value->getTimeFrame(); ?></div>
                                 <h4>Descripsion:</h4><p class="desc"><?php echo $value->getDescription(); ?></p>
                             </div>
                         </div>

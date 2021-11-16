@@ -1,16 +1,18 @@
 <?php
 
 class Import {
+    // own projects
     public function getProjects() {
-        $data = $this->readFile("projects.txt");
+        $data = $this->readFile("projects");
         if($data === false || empty($data))
             return false;
         return array_map(function($e) {
             return new Project($e);
         }, $data);
     }
+    // work experiences
     public function getExperiences() {
-        $data = $this->readFile("experiences.csv");
+        $data = $this->readFile("experiences");
         if($data === false || empty($data))
             return false;
         return array_map(function($e) {
@@ -18,7 +20,7 @@ class Import {
         }, $data);
     }
     private function readFile($file) {
-        $file = "csv/{$file}";
+        $file = "csv/{$file}.csv";
         if(file_exists($file)) {
             if(filesize($file) != 0) {
                 $file = fopen($file,'r') or die('Unable to open!');
@@ -26,13 +28,10 @@ class Import {
                 while(!feof($file)) {
                     array_push($data,fgets($file));
                 }
-                return $data;
-            } else {
-                return false;
+                return !empty($data) ? $data : false;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 }
 class Project {
