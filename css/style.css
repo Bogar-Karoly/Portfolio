@@ -232,3 +232,14 @@ p {
     font-size: 20px;
     font-weight: 500;
 }
+#experiences h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+#experiences .detail {
+    max-height: 100%;
+    padding: 18px;
+}
+#experiences ul {
+    margin-bottom: 0;
+}

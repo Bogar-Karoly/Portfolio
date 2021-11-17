@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Portfolio</title>
-
         <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/jquery-3.6.0.min.js?v=<?php echo time(); ?>"></script>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
         <script src="https://kit.fontawesome.com/44af24657a.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -22,6 +20,7 @@
             <ul>
                 <li><a href="#">HOME</a></il>
                 <il><a href="#about">ABOUT ME</a></il>
+                <il><a href="#experiences">EXPERIENCES</a></il>
                 <il><a href="#projects">PROJECTS</a></il>
                 <il><a href="#contact">CONTACT</a></il>
                 <il><a href="resume.pdf" target="_blank">RESUME</a></il>
@@ -45,19 +44,13 @@
                 if($data !== false) {
                     foreach($data as $value) { ?>
                         <div class="project-container pos">
-                            <div class="title">
-                                <ul>
-                                    <li>
-                                        <h2><?php echo $value->getCompanyName()." - ".$value->getPosition();  ?></h2>
-                                    </li>
-                                    <li>
-                                        <i id="arrow" class="fa fa-angle-down" style="font-size:36px"></i>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="detail">
-                                <div class="position"><?php echo $value->getTimeFrame(); ?></div>
-                                <h4>Descripsion:</h4><p class="desc"><?php echo $value->getDescription(); ?></p>
+                                <h2><?php echo $value->getPosition(); ?></h2>
+                                <div class="position"><?php echo '<b>'.$value->getCompanyName().'</b>   <i>'.$value->getTimeFrame().'</i>'; ?></div>
+                                <hr>
+                                <ul class="desc">
+                                    <?php array_map(function($e) { echo '<li>'.$e.'</li>'; }, $value->getDescription()); ?>
+                                </ul>
                             </div>
                         </div>
                     <?php } ?>

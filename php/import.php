@@ -74,7 +74,7 @@ class Experience {
         $this->company_name =   $row[0];
         $this->time_frame =     $row[1];
         $this->position =       $row[2];
-        $this->description =    $row[3];
+        $this->description =    explode('+',$row[3]);
     }
 }
 
